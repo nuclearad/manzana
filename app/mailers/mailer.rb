@@ -1,9 +1,14 @@
 class Mailer < ActionMailer::Base
-  default from: 'contacto@manzanaranaja.com'
+  default from: 'info@lamanzananaranja.com'
 
-  def contact
-    @greeting = "Hi"
-
-    mail to: 'danielpunk4@gmail.com', subject: 'Mensaje desde la web'
+  def contact(message={})
+  	@tipo     = message["tipo"]
+  	@nombre   = message["nombre"]
+  	@email    = message["email"]
+  	@telefono = message["telefono"]
+  	@mensaje  = message["mensaje"]
+  	@subject  = 'Mensaje desde la web'
+    mail to: ['jrojas@nuclearagenciadigital.com','info@lamanzananaranja.com'], subject: @subject
   end
+  
 end

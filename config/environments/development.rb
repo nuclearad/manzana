@@ -11,15 +11,6 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
 
-  config.action_mailer.smtp_settings  = {
-      address: 'smtp.gmail.com',
-      port: 587,
-      domain: 'localhost',
-      authentication: 'plain',
-      enable_starttls_auto: true,
-      user_name: 'danielwebapps@gmail.com',
-      password: 'colombia01'
-  }
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true

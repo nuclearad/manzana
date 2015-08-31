@@ -26,13 +26,13 @@
             <div style="width: 161px; float:left">
 
               <% if session[:login].nil? %>
-                  <%= link_to micuenta_path, :method => 'get' do  %>
+                  <%= link_to contacto_path, :method => 'get' do  %>
                       <%= image_tag 'micuenta.png' %>
                   <% end %>
 
               <% else %>
 
-                  <%= link_to micuenta_path, :method => 'get' do  %>
+                  <%= link_to contacto_path, :method => 'get' do  %>
                       <%= image_tag 'btn-micuenta-logeado.gif' %>
                   <% end %>
 
@@ -76,7 +76,7 @@
                   <a href="/">Home</a>
                 </li>
                 <li class="dropdown">
-                  <a href="que-hacemos.html">¿Que Hacemos?</a>
+                  <a href="que-hacemos.html">¿Qué Hacemos?</a>
                 </li>
                 <li class="dropdown">
                   <a href="planes.html">Planes</a>
@@ -90,7 +90,7 @@
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Servicio al Cliente</a>
                   <ul class="dropdown-menu pages">
                     <li><div class="yamm-content"><div class="row"><div class='col-xs-12 col-sm-12 col-md-12'><ul class='links'>
-                      <li><a href="como-funciona.html">¿Como Funciona?</a></li>
+                      <li><a href="como-funciona.html">¿Còmo Funciona?</a></li>
                       <li><a href="promesa-de-servicio.html">Promesa de Servicio</a></li>
                       <li><a href="preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
                       <li><a href="simulador-ahorro.html">Simulador de Ahorro</a></li>

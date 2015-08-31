@@ -485,15 +485,22 @@ class PagesController < ApplicationController
   end
 
   def contacto
-
     #Mailer.contact().deliver
     @mensaje = false
     if request.post?
+      
+      message ={ "tipo"     =>  params[:tipo], 
+                 "nombre"   =>  params[:nombre],
+                 "email"    =>  params[:email], 
+                 "telefono" =>  params[:telefono],
+                 "mensaje" =>   params[:mensaje]
+               }
 
-      open("http://webdaniel.info/mailmanzana/contacto.php?tipo="+Rack::Utils.escape(params[:tipo])+"&nombres="+Rack::Utils.escape(params[:nombre])+"&email="+Rack::Utils.escape(params[:email])+"&telefono="+Rack::Utils.escape(params[:telefono])+"&mensaje="+Rack::Utils.escape(params[:mensaje]))
-
-
-      @mensaje = true
+      unless params[:email].blank? && params[:nombre].blank? && params[:telefono].blank?
+        Mailer.contact(message).deliver
+        @mensaje = true
+      end
+      
     end
 
   end
