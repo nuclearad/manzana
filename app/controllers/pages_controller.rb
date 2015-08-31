@@ -495,8 +495,12 @@ class PagesController < ApplicationController
                  "telefono" =>  params[:telefono],
                  "mensaje" =>   params[:mensaje]
                }
-      Mailer.contact(message).deliver
-      @mensaje = true
+
+      unless params[:email].blank? && params[:nombre].blank? && params[:telefono].blank?
+        Mailer.contact(message).deliver
+        @mensaje = true
+      end
+      
     end
 
   end
