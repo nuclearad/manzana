@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20150714122021) do
 
   create_table "menucarbohydrates", force: true do |t|
     t.integer  "menu_id"
-    t.integer  "carbohydrate_id"
+    t.integer  "carbohydrates_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20150714122021) do
     t.integer  "wok_id"
     t.integer  "salad_id"
     t.integer  "soup_id"
-    t.integer  "carbohydrate_id"
+    t.integer  "carbohidrate_id"
     t.boolean  "estado"
     t.integer  "usuario_id"
     t.datetime "created_at"
@@ -107,8 +107,8 @@ ActiveRecord::Schema.define(version: 20150714122021) do
   create_table "planclientes", force: true do |t|
     t.string   "name"
     t.integer  "service_id"
-    t.integer  "customers_id"
-    t.integer  "estado",       default: 0
+    t.integer  "customer_id"
+    t.integer  "estado",      default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
