@@ -1,5 +1,5 @@
 class Mailer < ActionMailer::Base
-  default from: 'info@lamanzananaranja.com'
+  default from: 'lamanzananaranja1@gmail.com'
 
   def contact(message={})
   	@tipo     = message["tipo"]
@@ -8,7 +8,7 @@ class Mailer < ActionMailer::Base
   	@telefono = message["telefono"]
   	@mensaje  = message["mensaje"]
   	@subject  = 'Mensaje desde la web'
-    mail to: ['jrojas@nuclearagenciadigital.com','nurruchurtu@nuclearagenciadigital.com ', 'info@lamanzananaranja.com', 'sgiraldo@nuclearagenciadigital.com'], subject: @subject
+    mail to: ['jrojas@nuclearagenciadigital.com'], subject: @subject
   end
   
 end
