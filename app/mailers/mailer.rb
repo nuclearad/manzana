@@ -1,5 +1,5 @@
 class Mailer < ActionMailer::Base
-  default from: 'info@lamanzananaranja.com'
+  default from: 'lamanzananaranja1@gmail.com'
 
   def contact(message={})
   	@tipo     = message["tipo"]
