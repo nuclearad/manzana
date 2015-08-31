@@ -1,0 +1,278 @@
+<div class="container">
+
+  <section class="section featured-product wow fadeInUp">
+    <h3 class="tit-inter"><span>Nuestros Planes</span></h3>
+
+    <div class="row box-quehacemos">
+
+      <div class="col-sm-12">
+        <h3>La Manzana Naranja te ofrece una única experiencia a través de planes que te llevaran de la mano por un camino donde aprenderás a crear tu propio estilo de vida.
+          <br>
+          Te proponemos 4 planes que te ayudaran a crear mejores hábitos alimenticios:</h3>
+      </div>
+    </div>
+
+    <div class="row salto01">
+
+      <div class="col-sm-12 product-comparison">
+
+        <div class="table-responsive table-pas">
+
+          <table class="table table-bordered compare-table inner-top-vs">
+            <tr>
+              <th width="20%" class="sin-borde01"></th>
+              <td width="16%" class="tr-naranja">DESPERTAR</td>
+              <td width="16%" class="tr-naranja">CONCIENCIA</td>
+              <td width="16%" class="tr-naranja">EQUILIBRIO</td>
+              <td width="16%" class="tr-naranja">ESTILO DE VIDA</td>
+              <td width="16%" class="tr-naranja">TIQUETERA</td>
+            </tr>
+
+            <tr>
+              <th>Descuento</th>
+              <td><div class="product-price"><span class="price"> <%= @plans[0].discount %>% </span></div></td>
+              <td><div class="product-price"><span class="price"> <%= @plans[1].discount %>% </span></div></td>
+              <td><div class="product-price"><span class="price"> <%= @plans[2].discount %>% </span></div></td>
+              <td><div class="product-price"><span class="price"> <%= @plans[3].discount %>% </span></div></td>
+              <td><div class="product-price"><span class="price"> - </span></div></td>
+            </tr>
+
+            <tr>
+              <th>Número de Platos</th>
+              <td><p class="text"><%= @plans[0].dishes %><p></td>
+              <td><p class="text"><%= @plans[1].dishes %></p></td>
+              <td><p class="text"><%= @plans[2].dishes %></p></td>
+              <td><p class="text"><%= @plans[3].dishes %></p></td>
+              <td><p class="text"><%= @plans[4].dishes %></p></td>
+            </tr>
+
+            <tr>
+              <th>Semanas</th>
+              <td><p class="text"><%= @plans[0].dishes/5 %><p></td>
+              <td><p class="text"><%= @plans[1].dishes/5 %></p></td>
+              <td><p class="text"><%= @plans[2].dishes/5 %></p></td>
+              <td><p class="text"><%= @plans[3].dishes/5 %></p></td>
+              <td><p class="text"></p></td>
+            </tr>
+
+            <tr>
+              <th>Precio de Venta por Almuerzo + Bebida</th>
+              <td><p class="text"><%= number_to_currency(@plans[0].price) %><p></td>
+              <td><p class="text"><%= number_to_currency(@plans[1].price) %></p></td>
+              <td><p class="text"><%= number_to_currency(@plans[2].price) %></p></td>
+              <td><p class="text"><%= number_to_currency(@plans[3].price) %></p></td>
+              <td><p class="text"><%=  number_to_currency (@plans[4].price)/@plans[4].dishes %></p></td>
+            </tr>
+
+            <tr>
+              <th>Total sin Descuento</th>
+              <td><p class="text"><%= number_to_currency(@plans[0].price) %><p></td>
+              <td><p class="text"><%= number_to_currency(@plans[1].price) %></p></td>
+              <td><p class="text"><%= number_to_currency(@plans[2].price) %></p></td>
+              <td><p class="text"><%= number_to_currency(@plans[3].price) %></p></td>
+              <td><p class="text"> <%=  number_to_currency @plans[4].price %></p></td>
+            </tr>
+
+            <tr>
+              <th>Total con Descuento</th>
+
+              <td>
+                <p class="text">
+                <% descuento = @plans[0].discount/100.to_f %>
+                <% total =  @plans[0].price * descuento  %>
+                <%=  number_to_currency @plans[0].price-total %>
+                <p>
+              </td>
+              <td>
+                <p class="text">
+                  <% descuento = @plans[1].discount/100.to_f %>
+                  <% total =  @plans[1].price * descuento  %>
+                  <%=  number_to_currency @plans[1].price-total %>
+                <p>
+              </td>
+              <td>
+                <p class="text">
+                  <% descuento = @plans[2].discount/100.to_f %>
+                  <% total =  @plans[2].price * descuento  %>
+                  <%=  number_to_currency @plans[2].price-total %>
+                <p>
+              </td>
+              <td><p class="text">
+                <% descuento = @plans[3].discount/100.to_f %>
+                <% total =  @plans[3].price * descuento  %>
+                <%=  number_to_currency @plans[3].price-total %>
+                <p></td>
+              <td><p class="text">
+
+                <%=  number_to_currency @plans[4].price %>
+                <p></td>
+            </tr>
+
+            <tr  class="tr-gris">
+              <th>Ahorro</th>
+              <td>
+                <span class="price">
+                    <% descuento = @plans[0].discount/100.to_f %>
+                    <%= number_to_currency @plans[0].price * descuento  %>
+                </span>
+              </td>
+              <td>
+                 <span class="price">
+
+                    <% descuento = @plans[1].discount/100.to_f %>
+                   <%= number_to_currency @plans[1].price * descuento  %>
+                </span>
+              </td>
+              <td>
+                 <span class="price">
+                    <% descuento = @plans[2].discount/100.to_f %>
+                   <%= number_to_currency @plans[2].price * descuento  %>
+                </span>
+              </td>
+              <td>
+                 <span class="price">
+                    <% descuento = @plans[3].discount/100.to_f %>
+                   <%= number_to_currency @plans[3].price * descuento  %>
+                </span>
+              </td>
+              <td><span class="price">-</span></td>
+            </tr>
+
+            <tr>
+              <th>Costo menú por día</th>
+              <td>
+                <span class="price">
+                <% descuento = @plans[0].discount/100.to_f %>
+                <% total =  @plans[0].price * descuento  %>
+                <%=  number_to_currency (@plans[0].price-total)/@plans[0].dishes %>
+                </span>
+              </td>
+              <td>
+                <span class="price">
+                <% descuento = @plans[1].discount/100.to_f %>
+                  <% total =  @plans[1].price * descuento  %>
+                  <%=  number_to_currency (@plans[1].price-total)/@plans[1].dishes %>
+                </span>
+              </td>
+              <td>
+                <span class="price">
+                <% descuento = @plans[2].discount/100.to_f %>
+                  <% total =  @plans[2].price * descuento  %>
+                  <%=  number_to_currency (@plans[2].price-total)/@plans[2].dishes %>
+                </span>
+              </td>
+              <td>
+                <span class="price">
+                <% descuento = @plans[3].discount/100.to_f %>
+                  <% total =  @plans[3].price * descuento  %>
+                  <%=  number_to_currency (@plans[3].price-total)/@plans[3].dishes %>
+                </span>
+              </td>
+              <td><span class="price">
+
+
+
+
+                <%=  number_to_currency (@plans[4].price)/@plans[4].dishes %>
+
+
+
+
+              </span></td>
+            </tr>
+
+
+
+            <tr >
+              <th class="sin-borde02"></th>
+              <td class='text-center'><a class="lnk btn btn-primary" href="mi-cuenta-comprar.html?plan=<%= @plans[0].id %>"><i class="glyphicon glyphicon-shopping-cart"></i> COMPRAR</a></td>
+              <td class='text-center'><a class="lnk btn btn-primary" href="mi-cuenta-comprar.html?plan=<%= @plans[1].id %>"><i class="glyphicon glyphicon-shopping-cart"></i> COMPRAR</a></td>
+              <td class='text-center'><a class="lnk btn btn-primary" href="mi-cuenta-comprar.html?plan=<%= @plans[2].id %>"><i class="glyphicon glyphicon-shopping-cart"></i> COMPRAR</a></td>
+              <td class='text-center'><a class="lnk btn btn-primary" href="mi-cuenta-comprar.html?plan=<%= @plans[3].id %>"><i class="glyphicon glyphicon-shopping-cart"></i> COMPRAR</a></td>
+              <td class='text-center'><a class="lnk btn btn-primary" href="mi-cuenta-comprar.html?plan=<%= @plans[4].id %>"><i class="glyphicon glyphicon-shopping-cart"></i> COMPRAR</a></td>
+            </tr>
+          </table>
+        </div>
+
+      </div><!--TABLA-->
+
+
+
+    </div>
+
+    <h3 class="tit-inter"><span>Descripción Planes</span></h3>
+
+    <div class="row salto01">
+      <div class="product-tabs outer-top-smal  wow fadeInUp">
+
+        <ul id="product-tabs" class="nav nav-tabs nav-tab-cell-detail">
+          <li class="active"><a data-toggle="tab" href="#despertar">PLAN DESPERTAR</a></li>
+          <li><a data-toggle="tab" href="#conciencia">PLAN CONCIENCIA</a></li>
+          <li><a data-toggle="tab" href="#equilibrio">PLAN EQUILIBRIO</a></li>
+          <li><a data-toggle="tab" href="#vida">PLAN ESTILO DE VIDA</a></li>
+          <li><a data-toggle="tab" href="#tiquetera">TIQUETERA</a></li>
+        </ul><!-- /.nav-tabs #product-tabs -->
+
+        <div class="tab-content outer-top-xs">
+
+          <div id="despertar" class="tab-pane in active"><div class="product-tab">
+            <div class="row">
+              <div class="col-md-2"><img src="assets/images/iconos/13.png"></div>
+              <div class="col-md-10">
+                <h2 style="color:#F36A20"><%= raw @textsGenerals[9].title %></h2>
+                <%= raw @textsGenerals[9].description %>
+              </div></div>
+          </div></div><!-- /.tab-pane -->
+
+          <div id="conciencia" class="tab-pane"><div class="product-tab">
+            <div class="row">
+              <div class="col-md-2"><img src="assets/images/iconos/14.png"></div>
+              <div class="col-md-10">
+                <h2 style="color:#F36A20"><%= raw @textsGenerals[10].title %></h2>
+                <%= raw @textsGenerals[10].description %>
+              </div></div>
+          </div></div><!-- /.tab-pane -->
+
+          <div id="equilibrio" class="tab-pane"><div class="product-tab">
+            <div class="row">
+              <div class="col-md-2"><img src="assets/images/iconos/15.png"></div>
+              <div class="col-md-10">
+                <h2 style="color:#F36A20"><%= raw @textsGenerals[11].title %></h2>
+                <%= raw @textsGenerals[11].description %>
+              </div></div>
+          </div></div><!-- /.tab-pane -->
+
+          <div id="vida" class="tab-pane"><div class="product-tab">
+            <div class="row">
+              <div class="col-md-2"><img src="assets/images/iconos/16.png"></div>
+              <div class="col-md-10">
+                <h2 style="color:#F36A20"><%= raw @textsGenerals[12].title %></h2>
+                <%= raw @textsGenerals[12].description %>
+              </div></div>
+          </div></div><!-- /.tab-pane -->
+
+          <div id="tiquetera" class="tab-pane"><div class="product-tab">
+            <div class="row">
+              <div class="col-md-2"><img src="assets/images/iconos/17.png"></div>
+              <div class="col-md-10">
+                <h2 style="color:#F36A20"><%= raw @textsGenerals[13].title %></h2>
+                <%= raw @textsGenerals[13].description %>
+              </div></div>
+          </div></div><!-- /.tab-pane -->
+
+        </div><!-- /.tab-content -->
+
+      </div><!-- /.product-tabs -->
+
+    </div><!--texto planes-->
+
+    <h3><a class="btn btn-primary pad-extra" type="button">¿Quieres que contactemos a tu empresa para que disfrute de LA MANZANA NARANJA?</a></h3>
+
+
+
+
+
+
+</section><!-- /.section -->
+
+</div><!-- /.container -->
