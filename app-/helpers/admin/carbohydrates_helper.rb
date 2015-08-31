@@ -1,2 +1,0 @@
-module Admin::CarbohydratesHelper
-end
