@@ -3,7 +3,7 @@ ActionMailer::Base.smtp_settings = {
   :port                 => 587,
   :domain               => "gmail.com",
   :user_name            => "jrojas@nuclearagenciadigital.com",
-  :password             => "remolacho",
+  :password             => "",
   :authentication       => "plain",
   :enable_starttls_auto => true
 }
@@ -12,10 +12,11 @@ ActionMailer::Base.smtp_settings = {
 ActionMailer::Base.smtp_settings = {
   :address              => "smtp.gmail.com",
   :port                 => 587,
-  :domain               => "gmail.com",
-  :user_name            => "danielwebapps@gmail.com",
-  :password             => "colombia01",
+  :domain               => "45.55.172.80",
+  :user_name            => "lamanzananaranja1@gmail.com",
+  :password             => "lamanzana1naranja",
   :authentication       => "plain",
-  :enable_starttls_auto => true
+  :enable_starttls_auto => false
 }
 =end
+
