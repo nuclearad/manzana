@@ -26,13 +26,13 @@
             <div style="width: 161px; float:left">
 
               <% if session[:login].nil? %>
-                  <%= link_to micuenta_path, :method => 'get' do  %>
+                  <%= link_to contacto_path, :method => 'get' do  %>
                       <%= image_tag 'micuenta.png' %>
                   <% end %>
 
               <% else %>
 
-                  <%= link_to micuenta_path, :method => 'get' do  %>
+                  <%= link_to contacto_path, :method => 'get' do  %>
                       <%= image_tag 'btn-micuenta-logeado.gif' %>
                   <% end %>
 
