@@ -10500,3 +10500,479 @@ Started GET "/assets/tw.png" for 127.0.0.1 at 2015-08-31 17:48:50 -0430
 
 
 Started GET "/assets/ic-pagos.png" for 127.0.0.1 at 2015-08-31 17:48:50 -0430
+
+
+Started POST "/contacto.html" for 127.0.0.1 at 2015-08-31 17:51:34 -0430
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by PagesController#contacto as HTML
+  Parameters: {"tipo"=>"Cita Valoración", "nombre"=>"jonathan rojas", "email"=>"jonathang_25@hotmail.com", "telefono"=>"04123213123", "mensaje"=>"n"}
+Can't verify CSRF token authenticity
+  Rendered mailer/contact.html.erb (2.3ms)
+  Rendered mailer/contact.text.erb (0.8ms)
+
+Mailer#contact: processed outbound mail in 282.9ms
+
+Sent mail to jrojas@nuclearagenciadigital.com (5570.8ms)
+Date: Mon, 31 Aug 2015 17:51:34 -0430
+From: info@lamanzananaranja.com
+To: jrojas@nuclearagenciadigital.com
+Message-ID: <55e4d36e9e1ef_314f2315e24c76372@globalr2-Inspiron-3421.mail>
+Subject: Mensaje desde la web
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_55e4d36e9bb5b_314f2315e24c762a0";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_55e4d36e9bb5b_314f2315e24c762a0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Mailer#contact
+
+, find me in app/views/mailer/contact.text.erb
+
+----==_mimepart_55e4d36e9bb5b_314f2315e24c762a0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<h1>Mensaje desde la web</h1>
+<p>
+  Tipo de informe: Cita Valoraci=C3=B3n
+</p>
+<p>
+  Nombre: jonathan rojas
+</p>
+<p>
+  Email: jonathang_25@hotmail.com
+</p>
+<p>
+  Telefono: 04123213123
+</p>
+<p>
+  Mensaje: n
+</p>
+
+----==_mimepart_55e4d36e9bb5b_314f2315e24c762a0--
+
+  Rendered pages/contacto.html.erb within layouts/application (16.7ms)
+  Rendered includes/_header.erb (15.5ms)
+  Rendered includes/_footer.erb (16.8ms)
+Completed 200 OK in 6322ms (Views: 427.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-31 17:51:40 -0430
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-31 17:51:40 -0430
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-08-31 17:51:40 -0430
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-31 17:51:40 -0430
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2015-08-31 17:51:40 -0430
+
+
+Started GET "/assets/orange.css?body=1" for 127.0.0.1 at 2015-08-31 17:51:40 -0430
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-08-31 17:51:40 -0430
+
+
+Started GET "/assets/owl.carousel.css?body=1" for 127.0.0.1 at 2015-08-31 17:51:40 -0430
+
+
+Started GET "/assets/owl.transitions.css?body=1" for 127.0.0.1 at 2015-08-31 17:51:40 -0430
+
+
+Started GET "/assets/lightbox.css?body=1" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/animate.min.css?body=1" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/rateit.css?body=1" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/bootstrap-select.min.css?body=1" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/jquery-1.11.1.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/bootstrap-hover-dropdown.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/owl.carousel.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/echo.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/jquery.easing-1.3.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/bootstrap-slider.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/jquery.rateit.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/lightbox.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/bootstrap-select.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/wow.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/validate.js?body=1" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/tel-top.png" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/pedidos.png" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/bh2.png" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/micuenta.png" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/bh1.png" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/fb.png" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/tw.png" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/in.png" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/assets/ic-pagos.png" for 127.0.0.1 at 2015-08-31 17:51:41 -0430
+
+
+Started GET "/contacto.html" for 127.0.0.1 at 2015-08-31 17:57:33 -0430
+Processing by PagesController#contacto as HTML
+  Rendered pages/contacto.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 10ms
+
+SyntaxError (/home/globalr2/Escritorio/nuclear/manzana naranja/manzana/app/views/pages/contacto.html.erb:50: syntax error, unexpected keyword_end
+...eze;@output_buffer.append=( end );@output_buffer.safe_append...
+...                               ^
+/home/globalr2/Escritorio/nuclear/manzana naranja/manzana/app/views/pages/contacto.html.erb:86: syntax error, unexpected keyword_ensure, expecting ')'
+/home/globalr2/Escritorio/nuclear/manzana naranja/manzana/app/views/pages/contacto.html.erb:88: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/pages/contacto.html.erb:50: syntax error, unexpected keyword_end
+  app/views/pages/contacto.html.erb:86: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/pages/contacto.html.erb:88: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /home/globalr2/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.4ms)
+  Rendered /home/globalr2/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/globalr2/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/globalr2/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (41.4ms)
+
+
+Started GET "/contacto.html" for 127.0.0.1 at 2015-08-31 17:57:42 -0430
+Processing by PagesController#contacto as HTML
+  Rendered pages/contacto.html.erb within layouts/application (16.7ms)
+  Rendered includes/_header.erb (1.2ms)
+  Rendered includes/_footer.erb (1.4ms)
+Completed 200 OK in 356ms (Views: 355.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:42 -0430
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:42 -0430
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:42 -0430
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-08-31 17:57:42 -0430
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2015-08-31 17:57:42 -0430
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:42 -0430
+
+
+Started GET "/assets/orange.css?body=1" for 127.0.0.1 at 2015-08-31 17:57:42 -0430
+
+
+Started GET "/assets/owl.carousel.css?body=1" for 127.0.0.1 at 2015-08-31 17:57:42 -0430
+
+
+Started GET "/assets/owl.transitions.css?body=1" for 127.0.0.1 at 2015-08-31 17:57:42 -0430
+
+
+Started GET "/assets/lightbox.css?body=1" for 127.0.0.1 at 2015-08-31 17:57:42 -0430
+
+
+Started GET "/assets/animate.min.css?body=1" for 127.0.0.1 at 2015-08-31 17:57:42 -0430
+
+
+Started GET "/assets/rateit.css?body=1" for 127.0.0.1 at 2015-08-31 17:57:42 -0430
+
+
+Started GET "/assets/bootstrap-select.min.css?body=1" for 127.0.0.1 at 2015-08-31 17:57:43 -0430
+
+
+Started GET "/assets/jquery-1.11.1.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:43 -0430
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:43 -0430
+
+
+Started GET "/assets/bootstrap-hover-dropdown.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:43 -0430
+
+
+Started GET "/assets/owl.carousel.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:43 -0430
+
+
+Started GET "/assets/echo.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:43 -0430
+
+
+Started GET "/assets/jquery.easing-1.3.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:43 -0430
+
+
+Started GET "/assets/bootstrap-slider.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:43 -0430
+
+
+Started GET "/assets/jquery.rateit.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:43 -0430
+
+
+Started GET "/assets/lightbox.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:43 -0430
+
+
+Started GET "/assets/bootstrap-select.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:43 -0430
+
+
+Started GET "/assets/wow.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:43 -0430
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:43 -0430
+
+
+Started GET "/assets/validate.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:43 -0430
+
+
+Started GET "/assets/tel-top.png" for 127.0.0.1 at 2015-08-31 17:57:43 -0430
+
+
+Started GET "/assets/pedidos.png" for 127.0.0.1 at 2015-08-31 17:57:43 -0430
+
+
+Started GET "/assets/bh2.png" for 127.0.0.1 at 2015-08-31 17:57:43 -0430
+
+
+Started GET "/assets/micuenta.png" for 127.0.0.1 at 2015-08-31 17:57:43 -0430
+
+
+Started GET "/assets/bh1.png" for 127.0.0.1 at 2015-08-31 17:57:43 -0430
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-08-31 17:57:43 -0430
+
+
+Started GET "/assets/tw.png" for 127.0.0.1 at 2015-08-31 17:57:43 -0430
+
+
+Started GET "/assets/fb.png" for 127.0.0.1 at 2015-08-31 17:57:43 -0430
+
+
+Started GET "/assets/in.png" for 127.0.0.1 at 2015-08-31 17:57:43 -0430
+
+
+Started GET "/assets/ic-pagos.png" for 127.0.0.1 at 2015-08-31 17:57:43 -0430
+
+
+Started POST "/contacto.html" for 127.0.0.1 at 2015-08-31 17:57:53 -0430
+Processing by PagesController#contacto as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yxPB4l8i9+dPq+eOuJuoCYr6Cc3F6BIu4r8ZMlB6w2M=", "tipo"=>"Cita Valoración", "nombre"=>"jonathan rojas", "email"=>"edan@hotmail.com", "telefono"=>"04123213123", "mensaje"=>"hh"}
+  Rendered mailer/contact.html.erb (0.2ms)
+  Rendered mailer/contact.text.erb (0.1ms)
+
+Mailer#contact: processed outbound mail in 17.2ms
+
+Sent mail to jrojas@nuclearagenciadigital.com, info@lamanzananaranja.com (1415.0ms)
+Date: Mon, 31 Aug 2015 17:57:53 -0430
+From: info@lamanzananaranja.com
+To: jrojas@nuclearagenciadigital.com, 
+ info@lamanzananaranja.com
+Message-ID: <55e4d4e91eafa_314f256b2fc07651@globalr2-Inspiron-3421.mail>
+Subject: Mensaje desde la web
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_55e4d4e91d7e7_314f256b2fc0764e7";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_55e4d4e91d7e7_314f256b2fc0764e7
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Mailer#contact
+
+, find me in app/views/mailer/contact.text.erb
+
+----==_mimepart_55e4d4e91d7e7_314f256b2fc0764e7
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<h1>Mensaje desde la web</h1>
+<p>
+  Tipo de informe: Cita Valoraci=C3=B3n
+</p>
+<p>
+  Nombre: jonathan rojas
+</p>
+<p>
+  Email: edan@hotmail.com
+</p>
+<p>
+  Telefono: 04123213123
+</p>
+<p>
+  Mensaje: hh
+</p>
+
+----==_mimepart_55e4d4e91d7e7_314f256b2fc0764e7--
+
+  Rendered pages/contacto.html.erb within layouts/application (14.0ms)
+  Rendered includes/_header.erb (1.2ms)
+  Rendered includes/_footer.erb (1.8ms)
+Completed 200 OK in 1773ms (Views: 333.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/orange.css?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/owl.carousel.css?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/owl.transitions.css?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/lightbox.css?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/animate.min.css?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/rateit.css?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/bootstrap-select.min.css?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/jquery-1.11.1.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/bootstrap-hover-dropdown.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/owl.carousel.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/echo.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/jquery.easing-1.3.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/bootstrap-slider.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/jquery.rateit.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/lightbox.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/bootstrap-select.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/wow.min.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/validate.js?body=1" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/tel-top.png" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/bh2.png" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/pedidos.png" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/micuenta.png" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/bh1.png" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/fb.png" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/tw.png" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/in.png" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
+
+
+Started GET "/assets/ic-pagos.png" for 127.0.0.1 at 2015-08-31 17:57:55 -0430
