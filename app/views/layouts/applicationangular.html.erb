@@ -45,7 +45,7 @@
 
 
 
-  <%= zopim_init %>
+ 
 
   <%= render 'includes/footer' %>
 
@@ -68,8 +68,11 @@
                                'wow.min',
                                'scripts'
   %>
+  
+  <%= zopim_init %>
+  
   <script>
-
+  
 
       var socketApp = angular.module('socketApp', ['ngSanitize']);
 
