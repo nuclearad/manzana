@@ -12,5 +12,4 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require zopim_chat
 //= require turbolinks
