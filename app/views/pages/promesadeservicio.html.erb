@@ -6,9 +6,9 @@
     <div class="row box-quehacemos">
 
       <div class="col-sm-4">
-        <h3><%= raw @textsGenerals[0].title %></h3>
+        <h4><%= raw @textsGenerals[0].title %></h4>
         <%= raw @textsGenerals[0].description %>
-        </div>
+     </div>
 
       <div class="col-sm-7 pull-right"><div class="blog-page box-quehacemos">
         <div class="row">
@@ -60,8 +60,7 @@
           <div class="col-md-5 pull-right"><div class="blog-post-author-details wow fadeInUp">
             <div class="row">
               <h4> <%= raw @textsGenerals[5].title %></h4>
-              <%= raw @textsGenerals[5].description %>
-              <a class="btn btn-primary" type="button" href="http://www.proplanet.com.co" target="_black" >www.proplanet.com.co</a>
+              <%= raw @textsGenerals[5].description.gsub("100%", "") %>
             </div></div></div>
 
         </div></div>
