@@ -57,20 +57,20 @@
 
             <tr>
               <th>Precio de Venta por Almuerzo + Bebida</th>
-              <td><p class="text"><%= number_to_currency(@plans[0].price) %><p></td>
-              <td><p class="text"><%= number_to_currency(@plans[1].price) %></p></td>
-              <td><p class="text"><%= number_to_currency(@plans[2].price) %></p></td>
-              <td><p class="text"><%= number_to_currency(@plans[3].price) %></p></td>
-              <td><p class="text"><%=  number_to_currency (@plans[4].price)/@plans[4].dishes %></p></td>
+              <td><p class="text"><%= number_to_currency(@plans[0].price, precision: 0) %><p></td>
+              <td><p class="text"><%= number_to_currency(@plans[1].price, precision: 0) %></p></td>
+              <td><p class="text"><%= number_to_currency(@plans[2].price, precision: 0) %></p></td>
+              <td><p class="text"><%= number_to_currency(@plans[3].price, precision: 0) %></p></td>
+              <td><p class="text"><%=  number_to_currency (@plans[4].price)/@plans[4].dishes, precision: 0 %></p></td>
             </tr>
 
             <tr>
               <th>Total sin Descuento</th>
-              <td><p class="text"><%= number_to_currency(@plans[0].price) %><p></td>
-              <td><p class="text"><%= number_to_currency(@plans[1].price) %></p></td>
-              <td><p class="text"><%= number_to_currency(@plans[2].price) %></p></td>
-              <td><p class="text"><%= number_to_currency(@plans[3].price) %></p></td>
-              <td><p class="text"> <%=  number_to_currency @plans[4].price %></p></td>
+              <td><p class="text"><%= number_to_currency(@plans[0].price, precision: 0) %><p></td>
+              <td><p class="text"><%= number_to_currency(@plans[1].price, precision: 0) %></p></td>
+              <td><p class="text"><%= number_to_currency(@plans[2].price, precision: 0) %></p></td>
+              <td><p class="text"><%= number_to_currency(@plans[3].price, precision: 0) %></p></td>
+              <td><p class="text"> <%=  number_to_currency @plans[4].price, precision: 0 %></p></td>
             </tr>
 
             <tr>
@@ -80,31 +80,31 @@
                 <p class="text">
                 <% descuento = @plans[0].discount/100.to_f %>
                 <% total =  @plans[0].price * descuento  %>
-                <%=  number_to_currency @plans[0].price-total %>
+                <%=  number_to_currency @plans[0].price-total, precision: 0 %>
                 <p>
               </td>
               <td>
                 <p class="text">
                   <% descuento = @plans[1].discount/100.to_f %>
                   <% total =  @plans[1].price * descuento  %>
-                  <%=  number_to_currency @plans[1].price-total %>
+                  <%=  number_to_currency @plans[1].price-total, precision: 0 %>
                 <p>
               </td>
               <td>
                 <p class="text">
                   <% descuento = @plans[2].discount/100.to_f %>
                   <% total =  @plans[2].price * descuento  %>
-                  <%=  number_to_currency @plans[2].price-total %>
+                  <%=  number_to_currency @plans[2].price-total, precision: 0 %>
                 <p>
               </td>
               <td><p class="text">
                 <% descuento = @plans[3].discount/100.to_f %>
                 <% total =  @plans[3].price * descuento  %>
-                <%=  number_to_currency @plans[3].price-total %>
+                <%=  number_to_currency @plans[3].price-total, precision: 0 %>
                 <p></td>
               <td><p class="text">
 
-                <%=  number_to_currency @plans[4].price %>
+                <%=  number_to_currency @plans[4].price, precision: 0 %>
                 <p></td>
             </tr>
 
@@ -113,26 +113,26 @@
               <td>
                 <span class="price">
                     <% descuento = @plans[0].discount/100.to_f %>
-                    <%= number_to_currency @plans[0].price * descuento  %>
+                    <%= number_to_currency((@plans[0].price * descuento), precision: 0)  %>
                 </span>
               </td>
               <td>
                  <span class="price">
 
                     <% descuento = @plans[1].discount/100.to_f %>
-                   <%= number_to_currency @plans[1].price * descuento  %>
+                   <%= number_to_currency @plans[1].price * descuento, precision: 0  %>
                 </span>
               </td>
               <td>
                  <span class="price">
                     <% descuento = @plans[2].discount/100.to_f %>
-                   <%= number_to_currency @plans[2].price * descuento  %>
+                   <%= number_to_currency @plans[2].price * descuento, precision: 0  %>
                 </span>
               </td>
               <td>
                  <span class="price">
                     <% descuento = @plans[3].discount/100.to_f %>
-                   <%= number_to_currency @plans[3].price * descuento  %>
+                   <%= number_to_currency @plans[3].price * descuento, precision: 0  %>
                 </span>
               </td>
               <td><span class="price">-</span></td>
@@ -144,28 +144,28 @@
                 <span class="price">
                 <% descuento = @plans[0].discount/100.to_f %>
                 <% total =  @plans[0].price * descuento  %>
-                <%=  number_to_currency (@plans[0].price-total)/@plans[0].dishes %>
+                <%=  number_to_currency (@plans[0].price-total)/@plans[0].dishes, precision: 0 %>
                 </span>
               </td>
               <td>
                 <span class="price">
                 <% descuento = @plans[1].discount/100.to_f %>
                   <% total =  @plans[1].price * descuento  %>
-                  <%=  number_to_currency (@plans[1].price-total)/@plans[1].dishes %>
+                  <%=  number_to_currency (@plans[1].price-total)/@plans[1].dishes, precision: 0 %>
                 </span>
               </td>
               <td>
                 <span class="price">
                 <% descuento = @plans[2].discount/100.to_f %>
                   <% total =  @plans[2].price * descuento  %>
-                  <%=  number_to_currency (@plans[2].price-total)/@plans[2].dishes %>
+                  <%=  number_to_currency (@plans[2].price-total)/@plans[2].dishes, precision: 0 %>
                 </span>
               </td>
               <td>
                 <span class="price">
                 <% descuento = @plans[3].discount/100.to_f %>
                   <% total =  @plans[3].price * descuento  %>
-                  <%=  number_to_currency (@plans[3].price-total)/@plans[3].dishes %>
+                  <%=  number_to_currency (@plans[3].price-total)/@plans[3].dishes, precision: 0 %>
                 </span>
               </td>
               <td><span class="price">
@@ -173,7 +173,7 @@
 
 
 
-                <%=  number_to_currency (@plans[4].price)/@plans[4].dishes %>
+                <%=  number_to_currency (@plans[4].price)/@plans[4].dishes, precision: 0 %>
 
 
 
