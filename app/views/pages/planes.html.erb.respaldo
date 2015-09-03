@@ -21,66 +21,61 @@
           <table class="table table-bordered compare-table inner-top-vs">
             <tr>
               <th width="20%" class="sin-borde01"></th>
-              <td width="16%" class="tr-naranja">TIQUETERA</td>
               <td width="16%" class="tr-naranja">DESPERTAR</td>
               <td width="16%" class="tr-naranja">CONCIENCIA</td>
               <td width="16%" class="tr-naranja">EQUILIBRIO</td>
               <td width="16%" class="tr-naranja">ESTILO DE VIDA</td>
+              <td width="16%" class="tr-naranja">TIQUETERA</td>
             </tr>
 
             <tr>
               <th>Descuento</th>
-              <td><div class="product-price"><span class="price"> - </span></div></td>
               <td><div class="product-price"><span class="price"> <%= @plans[0].discount %>% </span></div></td>
               <td><div class="product-price"><span class="price"> <%= @plans[1].discount %>% </span></div></td>
               <td><div class="product-price"><span class="price"> <%= @plans[2].discount %>% </span></div></td>
               <td><div class="product-price"><span class="price"> <%= @plans[3].discount %>% </span></div></td>
-              
+              <td><div class="product-price"><span class="price"> - </span></div></td>
             </tr>
 
             <tr>
               <th>Número de Platos</th>
-              <td><p class="text"><%= @plans[4].dishes %></p></td>
               <td><p class="text"><%= @plans[0].dishes %><p></td>
               <td><p class="text"><%= @plans[1].dishes %></p></td>
               <td><p class="text"><%= @plans[2].dishes %></p></td>
               <td><p class="text"><%= @plans[3].dishes %></p></td>
-              
+              <td><p class="text"><%= @plans[4].dishes %></p></td>
             </tr>
 
             <tr>
               <th>Semanas</th>
-              <td><p class="text"></p></td>
               <td><p class="text"><%= @plans[0].dishes/5 %><p></td>
               <td><p class="text"><%= @plans[1].dishes/5 %></p></td>
               <td><p class="text"><%= @plans[2].dishes/5 %></p></td>
               <td><p class="text"><%= @plans[3].dishes/5 %></p></td>
+              <td><p class="text"></p></td>
             </tr>
 
             <tr>
               <th>Precio de Venta por Almuerzo + Bebida</th>
-              <td><p class="text"><%=  number_to_currency (@plans[4].price)/@plans[4].dishes, precision: 0 %></p></td>
               <td><p class="text"><%= number_to_currency(@plans[0].price, precision: 0) %><p></td>
               <td><p class="text"><%= number_to_currency(@plans[1].price, precision: 0) %></p></td>
               <td><p class="text"><%= number_to_currency(@plans[2].price, precision: 0) %></p></td>
               <td><p class="text"><%= number_to_currency(@plans[3].price, precision: 0) %></p></td>
+              <td><p class="text"><%=  number_to_currency (@plans[4].price)/@plans[4].dishes, precision: 0 %></p></td>
             </tr>
 
             <tr>
               <th>Total sin Descuento</th>
-              <td><p class="text"> <%=  number_to_currency @plans[4].price, precision: 0 %></p></td>
               <td><p class="text"><%= number_to_currency(@plans[0].price, precision: 0) %><p></td>
               <td><p class="text"><%= number_to_currency(@plans[1].price, precision: 0) %></p></td>
               <td><p class="text"><%= number_to_currency(@plans[2].price, precision: 0) %></p></td>
               <td><p class="text"><%= number_to_currency(@plans[3].price, precision: 0) %></p></td>
+              <td><p class="text"> <%=  number_to_currency @plans[4].price, precision: 0 %></p></td>
             </tr>
 
             <tr>
               <th>Total con Descuento</th>
-              <td><p class="text">
 
-                <%=  number_to_currency @plans[4].price, precision: 0 %>
-                <p></td>
               <td>
                 <p class="text">
                 <% descuento = @plans[0].discount/100.to_f %>
@@ -107,11 +102,14 @@
                 <% total =  @plans[3].price * descuento  %>
                 <%=  number_to_currency @plans[3].price-total, precision: 0 %>
                 <p></td>
+              <td><p class="text">
+
+                <%=  number_to_currency @plans[4].price, precision: 0 %>
+                <p></td>
             </tr>
 
             <tr  class="tr-gris">
               <th>Ahorro</th>
-              <td><span class="price">-</span></td>
               <td>
                 <span class="price">
                     <% descuento = @plans[0].discount/100.to_f %>
@@ -137,14 +135,11 @@
                    <%= number_to_currency @plans[3].price * descuento, precision: 0  %>
                 </span>
               </td>
-              
+              <td><span class="price">-</span></td>
             </tr>
 
             <tr>
               <th>Costo menú por día</th>
-              <td><span class="price">
-                <%=  number_to_currency (@plans[4].price)/@plans[4].dishes, precision: 0 %>
-              </span></td>              
               <td>
                 <span class="price">
                 <% descuento = @plans[0].discount/100.to_f %>
@@ -173,6 +168,17 @@
                   <%=  number_to_currency (@plans[3].price-total)/@plans[3].dishes, precision: 0 %>
                 </span>
               </td>
+              <td><span class="price">
+
+
+
+
+                <%=  number_to_currency (@plans[4].price)/@plans[4].dishes, precision: 0 %>
+
+
+
+
+              </span></td>
             </tr>
 
 
@@ -207,12 +213,11 @@
       <div class="product-tabs outer-top-smal  wow fadeInUp">
 
         <ul id="product-tabs" class="nav nav-tabs nav-tab-cell-detail">
-          <li class="active"><a data-toggle="tab" href="#tiquetera">TIQUETERA</a></li>
-          <li><a data-toggle="tab" href="#despertar">PLAN DESPERTAR</a></li>
+          <li class="active"><a data-toggle="tab" href="#despertar">PLAN DESPERTAR</a></li>
           <li><a data-toggle="tab" href="#conciencia">PLAN CONCIENCIA</a></li>
           <li><a data-toggle="tab" href="#equilibrio">PLAN EQUILIBRIO</a></li>
           <li><a data-toggle="tab" href="#vida">PLAN ESTILO DE VIDA</a></li>
-
+          <li><a data-toggle="tab" href="#tiquetera">TIQUETERA</a></li>
         </ul><!-- /.nav-tabs #product-tabs -->
 
         <div class="tab-content outer-top-xs">
