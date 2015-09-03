@@ -213,12 +213,11 @@
       <div class="product-tabs outer-top-smal  wow fadeInUp">
 
         <ul id="product-tabs" class="nav nav-tabs nav-tab-cell-detail">
-          <li class="active"><a data-toggle="tab" href="#tiquetera">TIQUETERA</a></li>
-          <li><a data-toggle="tab" href="#despertar">PLAN DESPERTAR</a></li>
+          <li class="active"><a data-toggle="tab" href="#despertar">PLAN DESPERTAR</a></li>
           <li><a data-toggle="tab" href="#conciencia">PLAN CONCIENCIA</a></li>
           <li><a data-toggle="tab" href="#equilibrio">PLAN EQUILIBRIO</a></li>
           <li><a data-toggle="tab" href="#vida">PLAN ESTILO DE VIDA</a></li>
-
+          <li><a data-toggle="tab" href="#tiquetera">TIQUETERA</a></li>
         </ul><!-- /.nav-tabs #product-tabs -->
 
         <div class="tab-content outer-top-xs">
