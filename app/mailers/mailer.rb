@@ -8,7 +8,7 @@ class Mailer < ActionMailer::Base
   	@telefono = message["telefono"]
   	@mensaje  = message["mensaje"]
   	@subject  = 'Mensaje desde la web'
-    mail to: ['jrojas@nuclearagenciadigital.com','nurruchurtu@nuclearagenciadigital.com ', 'info@lamanzananaranja.com', 'sgiraldo@nuclearagenciadigital.com'], subject: @subject
+    mail to: ['info@lamanzananaranja.com'], subject: @subject
   end
   
 end
