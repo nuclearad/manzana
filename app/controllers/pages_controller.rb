@@ -498,13 +498,16 @@ class PagesController < ApplicationController
 
       unless params[:email].blank? && params[:nombre].blank? && params[:telefono].blank?
         Mailer.contact(message).deliver
-        @mensaje = true
+        redirect_to gracias_path
       end
       
     end
 
   end
-
+  
+  def gracias
+    @mensaje = true
+  end
 
   def micuentaeditar
 
