@@ -31,12 +31,10 @@ Rails.application.routes.draw do
   get 'mi-plan.html' => 'pages#miplan', as: 'miplan'
   get 'mi-cuenta-comprar.html' => 'pages#comprar', as: 'comprar'
 
-
-
   get 'saveUser' => 'pages#saveUser', as: 'saveUser'
   get 'salir' => 'pages#salir', as: 'salir'
 
-
+  get 'gracias.html' => 'pages#gracias', as: 'gracias'
 
   get 'festivos' => 'pages#getFestivos', as: 'getfestivos'
   get 'platosdisponibles' => 'pages#platosdisponibles', as: 'platosdisponibles'

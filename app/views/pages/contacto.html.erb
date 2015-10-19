@@ -4,16 +4,6 @@
   <section class="section featured-product wow fadeInUp">
     <h3 class="tit-inter"><span>Contáctenos</span></h3>
 
-    <% if @mensaje %>
-        <div class="alert alert-success fade in">
-          <button data-dismiss="alert" class="close close-sm" type="button">
-            <i class="fa fa-times"></i>
-          </button>
-         Gracias por escribirnos pronto te responderemos
-        </div>
-
-  <% end %>
-
     <div class="col-md-12 contact-form" style="margin:30px 0 50px 0;">
       <%= form_tag contacto_path, method: :post, :id => 'form', class: 'register-form' do %>
         <div class="col-md-4">
