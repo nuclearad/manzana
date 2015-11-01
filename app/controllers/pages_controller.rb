@@ -1,23 +1,12 @@
 class PagesController < ApplicationController
   protect_from_forgery except: :agregarmenudia
 
-
-
   def index
-
-
-
-
-
-
 
   end
 
 
   def micuenta
-
-
-
 
     if session[:login].nil?
 
@@ -37,18 +26,14 @@ class PagesController < ApplicationController
 
       end
 
-
     else
       redirect_to armememu_path
     end
-
 
   end
 
 
   def armarmenu
-
-
 
     if session[:login].nil?
       redirect_to home_path
@@ -57,8 +42,6 @@ class PagesController < ApplicationController
       @plancliente = Plancliente.find_by_customers_id(session[:login])
       @user = Customers.find_by_id(session[:login])
       @armar = true;
-
-
 
       if @user.plancliente.last.service_id == 5
 
@@ -80,14 +63,7 @@ class PagesController < ApplicationController
 
 
       end
-
-
-
-
-
-
       @menuscliente = Menucliente.where('usuario_id= ?', session[:login])
-
     end
 
   end
@@ -95,15 +71,10 @@ class PagesController < ApplicationController
 
   def getMenus
 
-
-
-
     user = Customers.find_by_id(session[:login])
 
     #valido si tiene tiquetera
     if user.plancliente.last.service_id == 5
-
-
       fechaDisponible = user.plancliente.last.updated_at
       disponible = fechaDisponible.strftime("%w").to_i
       validoHora = true
@@ -117,9 +88,7 @@ class PagesController < ApplicationController
         validoHora = false
       end
 
-
       if validoHora
-
         horaDeCompra = fechaDisponible.strftime("%H").to_i
         if horaDeCompra > 10
           fechaDisponible  = fechaDisponible + 1.days
@@ -127,10 +96,8 @@ class PagesController < ApplicationController
 
       end
 
-
       fechaactual =  DateTime.now.strftime("%Y-%m-%d");
       fechaactual = fechaactual.to_date + 1.days
-
 
      # @menus = Menucliente.find_by_sql('SELECT  M.date AS "fechacliente", MC.estado, MC.wok_id, M.date FROM `menus` M LEFT JOIN menuwoks W ON W.menu_id = M.id LEFT JOIN menuclientes MC ON MC.date = M.date  WHERE M.date > "'+fechaactual.to_s+'"   GROUP BY M.date ORDER BY M.date ASC')
     #  @menus = Menucliente.find_by_sql(' SELECT C.estado, M.created_at, M.date, C.date AS fechacliente, W.wok_id FROM `menuclientes` C LEFT JOIN menus M USING (date) LEFT JOIN menuwoks W ON W.menu_id = M.id   WHERE C.usuario_id='+session[:login].to_s)
@@ -143,20 +110,9 @@ class PagesController < ApplicationController
       @menus = Menucliente.find_by_sql(' SELECT C.estado, M.created_at, M.date, C.date AS fechacliente, W.wok_id FROM `menuclientes` C LEFT JOIN menus M USING (date) LEFT JOIN menuwoks W ON W.menu_id = M.id   WHERE C.usuario_id='+session[:login].to_s)
       render json: @menus
 
-
-
     end
 
-
-
-
-
-
   end
-
-
-
-
 
   def platosdisponibles
 
@@ -169,8 +125,6 @@ class PagesController < ApplicationController
 
 
   end
-
-
 
   def  getdaydisponible
     @menus = Menucliente.find_by_sql('SELECT * FROM `menus` WHERE date>= "'+params[:from]+'" and date <= "'+params[:to]+'" ')
@@ -185,8 +139,6 @@ class PagesController < ApplicationController
 
   def armarmenudia
 
-
-
     if session[:login].nil?
       redirect_to home_path
     else
@@ -194,8 +146,6 @@ class PagesController < ApplicationController
       @ingredientes = Menu.find_by_date(params[:fecha])
 
       #valido dia
-
-
 
       @user = Customers.find_by_id(session[:login])
       @user.plancliente.last.service_id
@@ -207,8 +157,6 @@ class PagesController < ApplicationController
         render 'armarmenudia4', layout: 'menu'
       else
 
-
-
         @valido =  Menucliente.where('date= ? and usuario_id=?', params[:fecha], session[:login])
 
         if !@valido.exists?
@@ -217,26 +165,13 @@ class PagesController < ApplicationController
           render  layout: 'menu'
         end
 
-
-
       end
-
-
-
-
-
-
 
     end
 
-
-
   end
 
-
   def agregarmenudia
-
-
     @user = Customers.find_by_id(session[:login])
     @user.plancliente.last.service_id
 
@@ -245,13 +180,10 @@ class PagesController < ApplicationController
 
         if  params[:agregar]
 
-
           o = Menucliente.new(:estado=>1, :protein_id => params[:proteina], :soup_id => params[:sopa], :carbohydrate_id=> params[:carbo], :salad_id => params[:ensalada],:wok_id =>params[:wok], :date=>params[:fecha], :usuario_id=> session[:login])
           o.save
 
         else
-
-
 
           @menuClienteId = Menucliente.where('date= ? and usuario_id=?', params[:fecha], session[:login]).limit(1)
 
@@ -262,18 +194,11 @@ class PagesController < ApplicationController
           @menuCliente.update_attributes(:estado=>1, :protein_id => params[:proteina], :soup_id => params[:sopa], :carbohydrate_id=> params[:carbo], :salad_id => params[:ensalada],:wok_id =>params[:wok])
           render layout: false
 
-
-
-
         end
-
 
     else
 
-
-
       @menuClienteId = Menucliente.where('date= ? and usuario_id=?', params[:fecha], session[:login]).limit(1)
-
 
       @menuCliente = Menucliente.find_by_id(@menuClienteId[0].id)
 
@@ -281,31 +206,18 @@ class PagesController < ApplicationController
       @menuCliente.update_attributes(:estado=>1, :protein_id => params[:proteina], :soup_id => params[:sopa], :carbohydrate_id=> params[:carbo], :salad_id => params[:ensalada],:wok_id =>params[:wok])
       render layout: false
 
-
-
-
     end
 
-
   end
-
-
 
   def quehacemos
     @textsGenerals  = Text.all
-
   end
-
 
   def planes
     @textsGenerals  = Text.all
     @plans = Service.all
-
-
-
-
   end
-
 
   def comprar
     if params[:plan].nil?
@@ -314,16 +226,12 @@ class PagesController < ApplicationController
       @plan = Service.find_by_id(params[:plan])
     end
 
-
     o = [(0..9), ('A'..'Z')].map { |i| i.to_a }.flatten
     @referencia = (0...10).map { o[rand(o.length)] }.join
-
     
   end
 
-
   def saveUser
-
 
     if Customers.find_by_email(params[:email])
       data = [:estado => 'si']
@@ -353,15 +261,6 @@ class PagesController < ApplicationController
 
         end
 
-
-
-
-
-
-
-
-
-
         @horaActual =  Time.new
 
 
@@ -370,7 +269,6 @@ class PagesController < ApplicationController
         else
           @diaSegunHora = 1
         end
-
 
         @diaInicio =  Date.today
 
@@ -389,9 +287,7 @@ class PagesController < ApplicationController
           @diaInicio = @diaInicio + @diaSegunHora.day
         end
 
-
         @disponibles = Menu.where('date >= ?', @diaInicio)
-
 
         #dias que compro
         @diasDelPlan = Service.find_by_id(params[:plan])
@@ -433,30 +329,20 @@ class PagesController < ApplicationController
           open("http://webdaniel.info/mailmanzana/pago.php?nombre="+Rack::Utils.escape(params[:firstname])+"&email="+Rack::Utils.escape(params[:email])+"&platos="+Rack::Utils.escape(@planComprado.dishes)+"&vence="+Rack::Utils.escape(@disponibles[i].date))
         end
 
-
-
-
         session[:login] = o.id
-
 
       end
 
-
-
     end
-
 
     render json: data
 
     # render layout: false
   end
 
-
   def estilodevida
     @textsGenerals  = Text.all
   end
-
-
 
   def comofunciona
 
@@ -464,7 +350,6 @@ class PagesController < ApplicationController
 
   def promesadeservicio
     @textsGenerals  = Text.where('category =4')
-
   end
 
   def preguntasfrecuentes
@@ -476,9 +361,7 @@ class PagesController < ApplicationController
 
     render :action => 'informenutricional', :layout => 'layouts/applicationangular'
 
-
   end
-
 
   def simulador
 
@@ -514,42 +397,29 @@ class PagesController < ApplicationController
     if session[:login].nil?
       redirect_to home_path
     else
-
-
-    @cliente = Customers.find_by_id(session[:login])
+      @cliente = Customers.find_by_id(session[:login])
     end
 
-
   end
-
 
   def micuentaeditarpost
 
     @cliente = Customers.find_by_id(session[:login])
 
-
-
     #falta poner el usuario
     @cliente.update_attributes(:email => params[:email], :firstname => params[:firstname], :phone=> params[:phone], :sex => params[:sex])
-
 
     if(params[:clave] != '')
         @cliente.update_attributes( :password => params[:clave])
     end
 
-
-
     redirect_to(micuentaeditar_path)
 
-
   end
-
 
   def miplan
 
-
   end
-
 
   def salir
     session[:login] = nil
