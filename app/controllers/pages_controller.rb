@@ -5,7 +5,6 @@ class PagesController < ApplicationController
 
   end
 
-
   def micuenta
 
     if session[:login].nil?
