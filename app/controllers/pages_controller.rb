@@ -339,6 +339,7 @@ class PagesController < ApplicationController
           :address => params[:address],
           :sex => params[:sex],
       )
+
       if o.save
 
         plancliente = Plancliente.new
@@ -349,28 +350,15 @@ class PagesController < ApplicationController
 
         if plancliente.save
           data = [:guardoplan => 'si']
-
-
         end
 
-
-
-
-
-
-
-
-
-
         @horaActual =  Time.new
-
 
         if @horaActual.strftime("%H").to_i>=11
           @diaSegunHora = 2
         else
           @diaSegunHora = 1
         end
-
 
         @diaInicio =  Date.today
 
@@ -406,9 +394,7 @@ class PagesController < ApplicationController
 
           if  @disponibles[i].estado == false
 
-
             puts @disponibles[i].date
-
 
             menu = Menucliente.new
             menu.date  = @disponibles[i].date
@@ -421,11 +407,9 @@ class PagesController < ApplicationController
 
           i +=1
 
-
           if dias == diaAgregado
             insertar = false
           end
-
 
           @planComprado = Service.find_by_id(params[:plan])
           puts "http://webdaniel.info/mailmanzana/pago.php?nombre="+Rack::Utils.escape(params[:firstname])+"&email="+Rack::Utils.escape(params[:email])+"&platos="+Rack::Utils.escape(@planComprado.dishes)+"&vence="+Rack::Utils.escape(@disponibles[i].date)
@@ -433,11 +417,7 @@ class PagesController < ApplicationController
           open("http://webdaniel.info/mailmanzana/pago.php?nombre="+Rack::Utils.escape(params[:firstname])+"&email="+Rack::Utils.escape(params[:email])+"&platos="+Rack::Utils.escape(@planComprado.dishes)+"&vence="+Rack::Utils.escape(@disponibles[i].date))
         end
 
-
-
-
         session[:login] = o.id
-
 
       end
 
