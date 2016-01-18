@@ -59,32 +59,22 @@ class PagesController < ApplicationController
       @armar = true;
 
 
-
       if @user.plancliente.last.service_id == 5
 
         @plan = Service.find_by_id(5)
-
 
         creado = @user.plancliente.last.created_at.to_s
 
         @limite = @user.plancliente.last.created_at + @plan.limite.days
 
-
         @menusHechos  = Menucliente.find_by_sql('SELECT * FROM `menuclientes` M INNER JOIN customers C ON M.usuario_id = C.id WHERE M.estado=1 AND M.date >= "'+creado+'"   AND M.date<="'+@limite.to_s+'" AND  M.usuario_id = "'+session[:login].to_s+'"')
 
-
-
         if @menusHechos.count >= @plan.dishes
+          puts "***********************************++"
           @armar = false
         end
 
-
       end
-
-
-
-
-
 
       @menuscliente = Menucliente.where('usuario_id= ?', session[:login])
 
@@ -185,8 +175,6 @@ class PagesController < ApplicationController
 
   def armarmenudia
 
-
-
     if session[:login].nil?
       redirect_to home_path
     else
@@ -194,8 +182,6 @@ class PagesController < ApplicationController
       @ingredientes = Menu.find_by_date(params[:fecha])
 
       #valido dia
-
-
 
       @user = Customers.find_by_id(session[:login])
       @user.plancliente.last.service_id
@@ -206,8 +192,6 @@ class PagesController < ApplicationController
 
         render 'armarmenudia4', layout: 'menu'
       else
-
-
 
         @valido =  Menucliente.where('date= ? and usuario_id=?', params[:fecha], session[:login])
 
